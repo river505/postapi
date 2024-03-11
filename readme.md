@@ -18,7 +18,7 @@ CUDA_VISIBLE_DEVICES=0 API_PORT=8000 python src/api_demo.py \
 执行该sh，待模型启动成功后，使用本项目代码进行测评。
 将待测评的alpaca格式数据放入datasets文件夹。
 
-#### windows系统：
+#### 1.windows系统：
 修改reading.py文件内路径信息,假设我的文件为theorem_results.json，代码如下
 ```
 def reading(filename=os.path.join(this,'dataset/theorem_results.json')): #第四行
@@ -46,7 +46,7 @@ pd.Series(anslist).to_csv("./outputs/theorem_qwen14b_score.csv",encoding="utf8")
 python qwen72B_csv.py
 ```
 
-#### linux或macos
+#### 2.linux或macos
 修改如下脚本内的位置信息
 ```
 get_answer.sh
@@ -56,12 +56,7 @@ get_score.sh
 
 
 
-
-
-
-
-
-### 本项目对各类模型应用发出post请求。
+## 本项目对各类模型应用发出post请求。
 主要应用：
 
 1.服务端启动LLamaFactory后，本地发出请求获得结果并保存（post.py,post-2.py）
