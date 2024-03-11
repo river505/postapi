@@ -2,6 +2,9 @@ import requests
 import json
 from reading import reading
 import pandas as pd
+
+
+
 list1,list2=reading()
 url = "http://localhost:8000/v1/chat/completions"
 correct=0
