@@ -1,5 +1,3 @@
-![image](https://github.com/river505/postapi/assets/98887550/05dbc8f3-5fe6-45ae-8d49-5ae2841012e0)![image](https://github.com/river505/postapi/assets/98887550/602807ed-9d03-459b-8d22-b54e56f1b66b)#   Postapi
-
 ### 快速上手--打分测评
 ```
 git clone https://github.com/river505/postapi.git
