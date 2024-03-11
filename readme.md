@@ -1,4 +1,4 @@
-### 快速上手--打分测评
+![image](https://github.com/river505/postapi/assets/98887550/a17753f7-267b-44fa-a17e-1d4eedcdb42c)### 快速上手--打分测评
 ```
 git clone https://github.com/river505/postapi.git
 
@@ -49,8 +49,20 @@ python qwen72B_csv.py
 #### 2.linux或macos
 修改如下脚本内的位置信息
 ```
-get_answer.sh
-get_score.sh
+#get_answer.sh
+para_dataset='C:\Users\user\PycharmProjects\postapi\dataset\theorem_results.json'
+para_outdir='../outputs/test1'
+para_url='http://localhost:8000/v1/chat/completions'
+#调用py脚本，并传递参数
+python post-3.py $para_dataset $para_outdir $para_url
+```
+```
+#get_score.sh
+para_answer='../outputs/test1.csv'
+para_score='./outputs/theorem_qwen14b_score.csv'
+para_url='http://ty1.puhuacloud.com:20164/v1/chat/completions'
+#调用py脚本，并传递参数
+python post-3.py $para_answer $para_score $para_url
 ```
 模型启动后，现执行get_answer.sh获取返回后，执行get_score.sh获得分数
 
