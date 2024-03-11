@@ -24,4 +24,4 @@
 |reading.py | 读取json文件的工具函数                                  |
 
 
-tips对于打分问题，可尝试调整优化qwen72b_csv.py中的prompt，当前版本只是一个可应用的例子。
+tips:对于打分问题，可尝试调整优化qwen72b_csv.py中的prompt，当前版本只是一个可应用的例子。
