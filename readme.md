@@ -6,24 +6,19 @@ cd postapi
 
 pip install -r requirements.txt
 ```
-### 以测评zephyr-7B模型在theorem上的表现为例，使用qwen72B进行打分。
+#### 以测评zephyr-7B模型在theorem上的表现为例，使用qwen72B进行打分。
 确保服务器端或本地启动了zephyr-7B模型，并使用openai接口规范（大部分框架都支持这一接口）
-以LLama Factory为例，安装LLama Factory之后，在其根目录中，添加如下脚本，修改路径。
-```
-CUDA_VISIBLE_DEVICES=0 API_PORT=8000 python src/api_demo.py \
-    --model_name_or_path path_to_llama_model \
-    --adapter_name_or_path path_to_checkpoint \
-    --template default \
-    --finetuning_type lora
-```
-以zephyr为例(没有微调，无adapter地址)
+以LLama Factory为例，安装LLama Factory之后，在其根目录中，添加如下sh文件，注意修改路径。
+以zephyr为例
 ```
 CUDA_VISIBLE_DEVICES=0 API_PORT=8000 python src/api_demo.py \
     --model_name_or_path /models/zephyr \
     --template mistral
 ```
-执行脚本并启动成功后，使用本项目代码进行测评。
+执行该sh，待模型启动成功后，使用本项目代码进行测评。
 将待测评的alpaca格式数据放入datasets文件夹。
+
+#### windows系统：
 修改reading.py文件内路径信息,假设我的文件为theorem_results.json，代码如下
 ```
 def reading(filename=os.path.join(this,'dataset/theorem_results.json')): #第四行
@@ -50,6 +45,13 @@ pd.Series(anslist).to_csv("./outputs/theorem_qwen14b_score.csv",encoding="utf8")
 ```
 python qwen72B_csv.py
 ```
+
+#### linux或macos
+修改如下脚本内的位置信息
+get_answer.sh
+get_score.sh
+
+模型启动后，现执行get_answer.sh获取返回后，执行get_score.sh获得分数
 
 
 
