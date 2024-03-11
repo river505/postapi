@@ -1,4 +1,65 @@
-#   Postapi
+![image](https://github.com/river505/postapi/assets/98887550/05dbc8f3-5fe6-45ae-8d49-5ae2841012e0)![image](https://github.com/river505/postapi/assets/98887550/602807ed-9d03-459b-8d22-b54e56f1b66b)#   Postapi
+
+### 快速上手--打分测评
+```
+git clone https://github.com/river505/postapi.git
+
+cd postapi
+
+pip install -r requirements.txt
+```
+### 以测评zephyr-7B模型在theorem上的表现为例，使用qwen72B进行打分。
+确保服务器端或本地启动了zephyr-7B模型，并使用openai接口规范（大部分框架都支持这一接口）
+以LLama Factory为例，安装LLama Factory之后，在其根目录中，添加如下脚本，修改路径。
+```
+CUDA_VISIBLE_DEVICES=0 API_PORT=8000 python src/api_demo.py \
+    --model_name_or_path path_to_llama_model \
+    --adapter_name_or_path path_to_checkpoint \
+    --template default \
+    --finetuning_type lora
+```
+以zephyr为例(没有微调，无adapter地址)
+```
+CUDA_VISIBLE_DEVICES=0 API_PORT=8000 python src/api_demo.py \
+    --model_name_or_path /models/zephyr \
+    --template mistral
+```
+执行脚本并启动成功后，使用本项目代码进行测评。
+将待测评的alpaca格式数据放入datasets文件夹。
+修改reading.py文件内路径信息,假设我的文件为theorem_results.json，代码如下
+```
+def reading(filename=os.path.join(this,'dataset/theorem_results.json')): #第四行
+```
+
+保存后打开post-2.py, 修改最后一行的保存位置：
+```
+pd.Series(anslist).to_csv("./outputs/theorem_zephyr.csv", index=False) #第45行
+```
+保存后
+执行post-2.py
+```
+python post-2.py
+```
+等待获取结果，获取结果后，进行72B打分过程，修改qwen72B_csv.py中的路径，为你刚刚获取的结果,并修改最后的得分保存路径：
+```
+test=pd.read_csv("./outputs/theorem_zephyr.csv",encoding="utf8")  #第6行
+
+···
+
+pd.Series(anslist).to_csv("./outputs/theorem_qwen14b_score.csv",encoding="utf8") #第46行
+```
+执行qwen72B_csv.py获取最后打分结果
+```
+python qwen72B_csv.py
+```
+
+
+
+
+
+
+
+
 ### 本项目对各类模型应用发出post请求。
 主要应用：
 
