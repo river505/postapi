@@ -47,18 +47,18 @@ python qwen72B_csv.py
 ```
 
 #### 2.linux或macos
-修改如下脚本内的位置信息
+修改如下脚本内的位置信息,改为自己需要的路径，文件中三个参数以此为，读取路径、输出路径、url
 ```
 #get_answer.sh
 para_dataset='C:\Users\user\PycharmProjects\postapi\dataset\theorem_results.json'
-para_outdir='../outputs/test1'
+para_outdir='./outputs/test1'
 para_url='http://localhost:8000/v1/chat/completions'
 #调用py脚本，并传递参数
 python post-3.py $para_dataset $para_outdir $para_url
 ```
 ```
 #get_score.sh
-para_answer='../outputs/test1.csv'
+para_answer='./outputs/test1.csv'
 para_score='./outputs/theorem_qwen14b_score.csv'
 para_url='http://ty1.puhuacloud.com:20164/v1/chat/completions'
 #调用py脚本，并传递参数
