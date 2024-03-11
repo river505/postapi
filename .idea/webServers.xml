@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="4e51e502-bf5b-4777-be64-31b11b65d147" name="se42">
+        <fileTransfer accessType="SFTP" host="njucloud.cn" port="10925" sshConfigId="56bb42c9-aa7c-415a-b323-c33a350a921f" sshConfig="cc-4090x2@njucloud.cn:10925 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" isUseRsync="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
