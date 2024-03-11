@@ -47,7 +47,7 @@ python qwen72B_csv.py
 ```
 
 #### 2.linux或macos
-修改如下脚本内的位置信息,改为自己需要的路径，文件中三个参数以此为，读取路径、输出路径、url
+修改如下脚本内的位置信息,改为自己需要的路径，文件中三个参数依次为，读取路径、输出路径、url
 ```
 #get_answer.sh
 para_dataset='C:\Users\user\PycharmProjects\postapi\dataset\theorem_results.json'
