@@ -48,9 +48,10 @@ python qwen72B_csv.py
 
 #### linux或macos
 修改如下脚本内的位置信息
+```
 get_answer.sh
 get_score.sh
-
+```
 模型启动后，现执行get_answer.sh获取返回后，执行get_score.sh获得分数
 
 
