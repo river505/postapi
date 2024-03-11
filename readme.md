@@ -1,4 +1,4 @@
-![image](https://github.com/river505/postapi/assets/98887550/a17753f7-267b-44fa-a17e-1d4eedcdb42c)### 快速上手--打分测评
+### 快速上手--打分测评
 ```
 git clone https://github.com/river505/postapi.git
 
