@@ -4,7 +4,7 @@ from reading import reading
 import pandas as pd
 import sys
 
-if "__name__" == "__main__":
+if __name__ == "__main__":
   aa,bb,cc= sys.argv[1], sys.argv[2],sys.argv[3]
   list1,list2=reading(aa)
   url = cc

@@ -4,7 +4,7 @@ import pandas as pd
 import sys
 # from reading import reading
 # list1,list2=reading()
-if "__name__" == "__main__":
+if __name__ == "__main__":
   aa, bb, cc = sys.argv[1], sys.argv[2], sys.argv[3]
   test=pd.read_csv(aa,encoding="utf8")
 
